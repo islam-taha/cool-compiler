@@ -80,10 +80,10 @@
     /************************************************************************/
     /*                DONT CHANGE ANYTHING IN THIS SECTION                  */
     
-    Program ast_root;	      /* the result of the parse  */
+    Program ast_root;	            /* the result of the parse  */
     Classes parse_results;        /* for use in semantic analysis */
     int omerrs = 0;               /* number of errors in lexing and parsing */
-    %}
+  %}
     
     /* A union of all the types that can be the result of parsing actions. */
     %union {
@@ -136,32 +136,29 @@
     
     /* You will want to change the following line. */
     %type <features> feature_list
-	%type <feature> feature
-	%type <formals> formal_list
+		%type <feature> feature
+		%type <formals> formal_list
    	%type <formal> formal
-	%type <cases> case_list
-	%type <case_> case
-	%type <expressions> expression_list 
-	%type <expressions> block_expression_list
-	%type <expression> expression
-	%type <expression> let_body
+		%type <cases> case_list
+		%type <case_> case
+		%type <expressions> expression_list 
+		%type <expressions> block_expression_list
+		%type <expression> expression
+		%type <expression> let_body
     
     /* Precedence declarations go here. */
-	
-	%right ASSIGN
-	%right NOT 
-	%nonassoc LE '<' '=' 
-	%left '+' '-'
-	%left '*' '/'
-	%right ISVOID
-	%right '~'
-	%left '@'
-	%left '.'
+		%right ASSIGN
+		%right NOT 
+		%nonassoc LE '<' '=' 
+		%left '+' '-'
+		%left '*' '/'
+		%right ISVOID
+		%right '~'
+		%left '@'
+		%left '.'
 
 
-    
-    
-    %%
+%%
     /* 
     Save the root of the abstract syntax tree in a global variable.
     */
@@ -339,7 +336,7 @@
 	;
     
     /* end of grammar */
-    %%
+  %%
     
     /* This function is called automatically when Bison detects a parse error. */
     void yyerror(char *s)
